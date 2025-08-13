@@ -368,10 +368,6 @@ function drawWheel() {
         // 9. Функция получения рекомендаций
         function getRecommendation(categoryIndex, value) {
             const recommendations = fullRecommendations[categoryIndex];
-            window.parent.postMessage({
-                type: 'getRecommendation',
-                height: [recommendations, value, recommendations[value]]
-            }, '*');
             if (value <= 4) return recommendations[1];
             if (value <= 8) return recommendations[5];
             return recommendations[9];
